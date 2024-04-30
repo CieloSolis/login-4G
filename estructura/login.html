@@ -1,0 +1,42 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../estilos/login.css">
+    <title>INICIO DE SESION</title>
+</head>
+<body>
+    <div class="card">
+        <div class="card-body">
+            <form action="../logica/login.php" method="post">
+                <h1>
+                    INICIO DE SESIÓN    
+                </h1>
+                <div class="img-perfil">
+                    <img src="../imagenes/usuario.png" alt="Usuario">
+                </div>
+                <label>
+                    USUARIO:
+                </label>
+                <input type="text" name="usuario" />
+                <br>
+                <br>
+                <label>
+                    CONTRASEÑA:
+                </label>
+                <input type="password" name="contrasena" />
+                <br>
+                <br>
+                <div class="enlace">
+                    <div class="registrar"> 
+                    <a href="../estructura/recuperar.html">¿OLVIDASTE TU CONTRASEÑA?</a>
+                </div>    
+                <div class="registrar"> 
+                <a href="../estructura/registro.html">REGISTRATE</a>
+                </div>
+                <button type="submit">ENVIAR</button>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>

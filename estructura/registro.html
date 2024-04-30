@@ -1,0 +1,85 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../estilos/registro.css">
+    <title>REGISTRO</title>
+</head>
+<body>
+    <div class="card">
+        <div class="card-body">
+            <form action="../logica/registro.php" method="post">
+                <h1>
+                    REGISTRO
+                </h1>
+                <div class="img-perfil">
+                    <img src="../imagenes/usuario.png" alt="Usuario">
+                    <label for="input-img" class="subir-imagen">
+                       Elegir
+                    </label>
+                    <input type="file" accept="image/*" id="input-img">
+                </div>
+                <div class="registrar">
+                    <div class="registro">
+                        <label>
+                            Nombre:
+                        </label>
+                        <input type="text" name="nombre" />
+                    </div>
+                    <div class="registro">
+                        <label>
+                            Apellidos:
+                        </label>
+                        <input type="text" name="apellido" />
+                    </div>
+                    <div class="registro">
+                        <label>
+                            Edad:
+                        </label>
+                        <input type="number" min="0" max="110" name="edad" />
+                    </div>
+                    <div class="registro">
+                        <label>
+                            Dirección:
+                        </label>
+                        <input type="text" name="direccion" />
+                    </div>
+                    <div class="registro">
+                        <label>
+                            Usuario:
+                        </label>
+                        <input type="text" name="usuario" />
+                    </div>
+                    <div class="registro">
+                        <label>
+                            Contraseña:
+                        </label>
+                        <input type="password" name="contrasena" />
+                    </div>
+                </div>
+                <div class="btn-enviar">
+                    <button type="submit">ENVIAR DATOS</button>
+                </div>
+            </form>
+            <div class="login" >
+                <label>
+                    ¿Ya tienes cuenta?
+                </label>
+                <br>
+                <button onclick="location.href='actividad17.1.html'">INICIAR SESION</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    const inputImg = document.getElementById('input-img');
+    const imgPerfil = document.querySelector('.img-perfil img');
+    inputImg.addEventListener('change', () => {
+        const file = inputImg.files[0];
+        const fileReader = new FileReader();
+        fileReader.onload = () => {
+            imgPerfil.src = fileReader.result;
+        }
+        fileReader.readAsDataURL(file);
+    });
+</script>

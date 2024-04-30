@@ -1,0 +1,47 @@
+.card{
+    width:300px;
+    margin:0 auto;
+    background-color: rgba(255, 255, 255, 0.959);
+    border-radius: 10px;
+  
+}
+.card-body{
+    padding-top: 2px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    
+}
+body{
+    background: url("../imagenes/login.webp") no-repeat center center fixed;
+    background-size: cover; 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+h1{
+    text-align: center;
+    color: rgb(15, 11, 16);    
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+input[type="email"]{
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 2px;
+    border-radius: 10px;
+    border-radius: 12px;
+}
+button{
+    background-color: rgb(208, 172, 208);
+    width: 100%;
+    padding: 10px;
+    color: rgb(95, 48, 106);
+    border: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+}
+button:hover{
+    background-color: rgb(219, 128, 239);
+}
