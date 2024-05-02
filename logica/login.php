@@ -4,13 +4,13 @@
         $password= $_POST['password'];
 
         $valid_email = 'cielosolislopez1909@gmail.com';
-        $valid_password = '12345678';
+        $valid_password = 'Cielo4678';
 
         if ($email== $valid_email && $password == $valid_password) {
             session_start();
             $_SESSION['email'] = $email;
             
-            header('Location: ../estructura/login.html');
+            header('Location: ../estructura/paginaprincipal.html');
         } else {
             Print "El usuario o la contraseña son incorrectos.";
         }

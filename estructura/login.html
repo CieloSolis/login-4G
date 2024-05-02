@@ -1,14 +1,16 @@
 <html>
+
 <head>
     <link rel="stylesheet" href="../estilos/login.css">
     <title>INICIO DE SESION</title>
 </head>
+
 <body>
     <div class="card">
         <div class="card-body">
             <form action="../logica/login.php" method="post">
                 <h1>
-                    INICIO DE SESIÓN    
+                    INICIO DE SESIÓN
                 </h1>
                 <div class="img-perfil">
                     <img src="../imagenes/usuario.png" alt="Usuario">
@@ -16,7 +18,10 @@
                 <label>
                     USUARIO:
                 </label>
-                <input type="email" name="email" />
+                <p>
+                    <span id="emailError"></span>
+                </p>
+                <input type="email" name="email" onblur="validateEmail()" />
                 <br>
                 <br>
                 <label>
@@ -26,13 +31,13 @@
                 <br>
                 <br>
                 <div class="enlace">
-                    <div class="registrar"> 
-                    <a href="../estructura/recuperar.html">¿OLVIDASTE TU CONTRASEÑA?</a>
-                </div>    
-                <div class="registrar"> 
-                <a href="../estructura/registro.html">REGISTRATE</a>
-                </div>
-                <button type="submit">ENVIAR</button>
+                    <div class="registrar">
+                        <a href="../estructura/recuperar.html">¿OLVIDASTE TU CONTRASEÑA?</a>
+                    </div>
+                    <div class="registrar">
+                        <a href="../estructura/registro.html">REGISTRATE</a>
+                    </div>
+                    <button type="submit">ENVIAR</button>
             </form>
 
         </div>
@@ -40,3 +45,43 @@
 </body>
 
 </html>
+
+<script>
+    function validateEmail() {
+        var email = document.getElementsByName("email")[0].value;
+        var emailError = document.getElementById("emailError");
+
+        if (email === "") {
+            emailError.textContent = "Please enter an email address.";
+        } else if (!validateEmailStructure(email)) {
+            emailError.textContent = "Please enter a valid email address.";
+        } else {
+            emailError.textContent = "";
+        }
+
+        function validateEmailStructure(email) {
+            // Regular expression to validate email structure
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    }
+
+    function validatePassword() {
+        var password = document.getElementsByName("password")[0].value;
+        var passwordError = document.getElementById("passwordError");
+
+        if (password === "") {
+            passwordError.textContent = "Please enter a password.";
+        } else if (!validatePasswordFormat(password)) {
+            passwordError.textContent = "Please enter a valid password format.";
+        } else {
+            passwordError.textContent = "";
+        }
+
+        function validatePasswordFormat(password) {
+            // Regular expression to validate password format
+            var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+            return passwordRegex.test(password);
+        }
+    }	
+</script>

@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['usuario'] = $usuario;
         $_SESSION['contrasena'] = $contrasena;
         
-        header('Location: ../estructura/registro.html');
+        header('Location: ../estructura/paginaprincipal.html');
     } else {
         Print "Los datos son incorrectos.";
     }

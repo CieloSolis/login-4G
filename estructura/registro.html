@@ -13,7 +13,7 @@
                 <div class="img-perfil">
                     <img src="../imagenes/usuario.png" alt="Usuario">
                     <label for="input-img" class="subir-imagen">
-                       ELEGIR
+                       Elegir
                     </label>
                     <input type="file" accept="image/*" id="input-img">
                 </div>
@@ -21,11 +21,11 @@
                     <div class="fila">
                         <div class="registro">
                             <label>Nombre:</label>
-                            <input type="text" name="nombre" />
+                            <input type="text" name="nombre" pattern="[A-Za-z]+" />
                         </div>
                         <div class="registro">
                             <label>Apellidos:</label>
-                            <input type="text" name="apellido" />
+                            <input type="text" name="apellido" pattern="[A-Za-z]+" />
                         </div>
                     </div>
                     <div class="fila">
@@ -41,7 +41,7 @@
                     <div class="fila">
                         <div class="registro">
                             <label>Usuario:</label>
-                            <input type="text" name="usuario" />
+                            <input type="email" name="usuario" onblur="validateEmail()"/>
                         </div>
                         <div class="registro">
                             <label>Contraseña:</label>
@@ -49,6 +49,9 @@
                         </div>
                     </div>
                 </div>
+                <p>
+                    <span id="emailError"></span>
+                </p>
                 <div class="btn-enviar">
                     <button type="submit">ENVIAR DATOS</button>
                 </div>
@@ -76,4 +79,54 @@
         }
         fileReader.readAsDataURL(file);
     });
+
+    function validateEmail() {
+        var email = document.getElementsByName("usuario")[0].value;
+        var emailError = document.getElementById("emailError");
+
+        if (email === "") {
+            emailError.textContent = "Please enter an email address.";
+        } else if (!validateEmailStructure(email)) {
+            emailError.textContent = "Please enter a valid email address.";
+        } else {
+            emailError.textContent = "";
+        }
+
+        function validateEmailStructure(email) {
+            // Regular expression to validate email structure
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+    }
+
+    function validatePassword() {
+        var password = document.getElementsByName("password")[0].value;
+        var passwordError = document.getElementById("passwordError");
+
+        if (password === "") {
+            passwordError.textContent = "Please enter a password.";
+        } else if (!validatePasswordFormat(password)) {
+            passwordError.textContent = "Please enter a valid password format.";
+        } else {
+            passwordError.textContent = "";
+        }
+
+        function validatePasswordFormat(password) {
+            // Regular expression to validate password format
+            var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+            return passwordRegex.test(password);
+        }
+    }	
+
+    function validateName() {
+        var name = document.getElementsByName("name")[0].value;
+        var nameError = document.getElementById("nameError");
+
+        if (name === "") {
+            nameError.textContent = "Please enter a name.";
+        } else {
+            nameError.textContent = "";
+        }
+    }
 </script>

@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         session_start();
         $_SESSION['correo'] = $correo;
         
-        header('Location: ../estructura/recuperar.html');
+        header('Location: ../estructura/paginaprincipal.html');
     } else {
         Print "Vuele a intentarlo.";
     }

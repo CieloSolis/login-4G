@@ -13,6 +13,7 @@
     flex: 1; 
     text-align: left; 
     margin-right: 10px;
+    
 }
 .fila {
     display: flex;
@@ -22,6 +23,7 @@
     flex: 1; 
     display: flex;
     margin-right: 20px;
+    
 }
 .fila .registro:last-child {
     margin-right: 0; 
@@ -29,6 +31,7 @@
 .fila .registro input {
     flex: 1; 
 }
+
 
 
 body{
@@ -106,6 +109,7 @@ input[type="number"] {
 label {
     width: 100%;
     display: block; /* Asegura que las etiquetas estén en una línea separada */
+     
     
 }
 
