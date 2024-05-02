@@ -13,46 +13,40 @@
                 <div class="img-perfil">
                     <img src="../imagenes/usuario.png" alt="Usuario">
                     <label for="input-img" class="subir-imagen">
-                       Elegir
+                       ELEGIR
                     </label>
                     <input type="file" accept="image/*" id="input-img">
                 </div>
                 <div class="registrar">
-                    <div class="registro">
-                        <label>
-                            Nombre:
-                        </label>
-                        <input type="text" name="nombre" />
+                    <div class="fila">
+                        <div class="registro">
+                            <label>Nombre:</label>
+                            <input type="text" name="nombre" />
+                        </div>
+                        <div class="registro">
+                            <label>Apellidos:</label>
+                            <input type="text" name="apellido" />
+                        </div>
                     </div>
-                    <div class="registro">
-                        <label>
-                            Apellidos:
-                        </label>
-                        <input type="text" name="apellido" />
+                    <div class="fila">
+                        <div class="registro">
+                            <label>Edad:</label>
+                            <input type="number" min="0" max="110" name="edad" />
+                        </div>
+                        <div class="registro">
+                            <label>Dirección:</label>
+                            <input type="text" name="direccion" />
+                        </div>
                     </div>
-                    <div class="registro">
-                        <label>
-                            Edad:
-                        </label>
-                        <input type="number" min="0" max="110" name="edad" />
-                    </div>
-                    <div class="registro">
-                        <label>
-                            Dirección:
-                        </label>
-                        <input type="text" name="direccion" />
-                    </div>
-                    <div class="registro">
-                        <label>
-                            Usuario:
-                        </label>
-                        <input type="text" name="usuario" />
-                    </div>
-                    <div class="registro">
-                        <label>
-                            Contraseña:
-                        </label>
-                        <input type="password" name="contrasena" />
+                    <div class="fila">
+                        <div class="registro">
+                            <label>Usuario:</label>
+                            <input type="text" name="usuario" />
+                        </div>
+                        <div class="registro">
+                            <label>Contraseña:</label>
+                            <input type="password" name="contrasena" />
+                        </div>
                     </div>
                 </div>
                 <div class="btn-enviar">
@@ -64,7 +58,7 @@
                     ¿Ya tienes cuenta?
                 </label>
                 <br>
-                <button onclick="location.href='actividad17.1.html'">INICIAR SESION</button>
+                <button onclick="location.href='login.html'">INICIAR SESION</button>
             </div>
         </div>
     </div>

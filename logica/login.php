@@ -1,22 +1,18 @@
 <?php 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $usuario = $_POST['usuario'];
-        $contrasena = $_POST['contrasena'];
+        $email = $_POST['email'];
+        $password= $_POST['password'];
 
-        $valid_usuario = 'cielosolislopez1909@gmail.com';
-        $valid_contrasena = '87654321';
+        $valid_email = 'cielosolislopez1909@gmail.com';
+        $valid_password = '12345678';
 
-        if ($usuario == $valid_usuario && $contrasena == $valid_contrasena) {
+        if ($email== $valid_email && $password == $valid_password) {
             session_start();
-            $_SESSION['usuario'] = $usuario;
-            $_SESSION['contrasena'] = $contrasena;
+            $_SESSION['email'] = $email;
             
-            header('Location: ../estructura/inicio.html');
+            header('Location: ../estructura/login.html');
         } else {
             Print "El usuario o la contraseña son incorrectos.";
         }
     }
-
-    
-
 ?>
