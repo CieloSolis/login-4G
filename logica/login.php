@@ -1,18 +1,26 @@
-<?php 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $email = $_POST['email'];
-        $password= $_POST['password'];
+<?php
+session_start();
 
-        $valid_email = 'cielosolislopez1909@gmail.com';
-        $valid_password = 'Cielo4678';
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $usuario =$_POST["email"]; 
+    $contra=$_POST["password"];
 
-        if ($email== $valid_email && $password == $valid_password) {
-            session_start();
-            $_SESSION['email'] = $email;
-            
-            header('Location: ../estructura/paginaprincipal.html');
-        } else {
-            Print "El usuario o la contraseña son incorrectos.";
-        }
-    }
+    $email="cielosolislopez1909@gmail.com";
+    $password="cielo192007";
+
+if ($usuario===$email && $password===$contra ){
+$hasheada =password_hash($password, PASSWORD_DEFAULT);
+
+    $Correosanitizado=filter_var($_POST[ 'email'], FILTER_SANITIZE_EMAIL);
+    header("Location: ../estructura/principal.html");
+
+
+}
+else{
+
+    print("contraseña o usuario incorrectos");
+
+}
+}
+
 ?>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Caja Registradora Completa</title>
+    <link rel="stylesheet" href="../estilos/principal.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <input type="search" id="product-search" placeholder=" Busque el producto que mas le interese.. ">
+            <button id="search-btn">Buscar</button>
+        </header>
+        
+        <aside id="categories">
+            <h3>Selecciona por categorías</h3>
+            <!-- Categorías cargadas desde PHP -->
+        </aside>
+        
+        <section id="product-list">
+            <!-- Lista de productos cargados desde PHP -->
+        </section>
+        
+        <aside id="shopping-cart">
+            <h3>Carrito</h3>
+            <div id="cart-items">
+                <!-- Ítems en el carrito -->
+            </div>
+            <div id="cart-summary">
+                <p>Subtotal: $<span id="subtotal">0.00</span></p>
+                <p>Descuento: $<span id="discount">0.00</span></p>
+                <p>IVA: $<span id="tax">0.00</span></p>
+                <p>Total: $<span id="total">0.00</span></p>
+                <button id="checkout">Pagar</button>
+            </div>
+        </aside>
+    </div>
+
+    <script src="inicio.js"></script>
+</body>
+</html>
